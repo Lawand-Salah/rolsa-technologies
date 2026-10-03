@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+# Rolsa Technologies
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive React website for a fictional green-energy company, built to let visitors learn about renewable energy, browse eco-friendly products, estimate their own carbon footprint, and book an installation.
 
-## Available Scripts
+**Live demo:** https://lawando69.github.io/rolsa_technologies *(update or remove this line depending on whether the GitHub Pages deployment is still live)*
 
-In the project directory, you can run:
+## About this project
 
-### `npm start`
+Rolsa Technologies was built as my final exam project for the T-Level in Digital Production, Design and Development at Uxbridge College. The brief was to design and build a full front-end web application within a fixed timeframe (around two and a half weeks), covering planning, UI/UX design, and implementation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Home** — introduces green energy concepts (solar, EV charging, smart meters) with supporting imagery
+- **Products** — a catalogue of eco-friendly energy products (solar panels, wind turbines, home energy storage, smart thermostats, and more)
+- **Carbon Footprint Reduction** — an information page on practical steps for reducing personal carbon footprint
+- **Calculator** — an interactive carbon footprint calculator. Takes monthly electricity/gas usage, yearly mileage and flights, and recycling habits, and returns an estimated annual footprint with a category rating (very low → exceeds limit)
+- **Schedules** — a multi-step booking flow for scheduling a green energy product installation (contact details → address → product selection → confirmation)
+- **Authentication** — login and registration forms (front-end only — see Known Limitations)
+- **Terms & Conditions** — a full T&Cs page covering use of the calculator, bookings, payments, and liability
+- Responsive design with separate desktop and mobile navigation components
 
-### `npm test`
+## Tech stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [React 19](https://react.dev/) (bootstrapped with [Create React App](https://github.com/facebook/create-react-app))
+- [React Router v7](https://reactrouter.com/) for client-side routing
+- Plain CSS per component (no UI framework)
+- Deployed via [GitHub Pages](https://pages.github.com/) (`gh-pages`)
 
-### `npm run build`
+## Getting started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Clone the repo and install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Run the app in development mode:
 
-### `npm run eject`
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser. The page reloads automatically on changes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Build a production bundle:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run build
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Deploy to GitHub Pages (requires `homepage` in `package.json` to point at your own repo):
 
-## Learn More
+```bash
+npm run deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Project structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+src/
+├── Assets/          # Icons and images
+├── Components/       # Reusable UI components (Navbar, Footer, Logo, ProductList, WindTurbine)
+├── Pages/            # One folder per route (Home, Products, CFReduction, Calculator, Schedules, Authentication, TermsConditions)
+├── Pages.js          # Central route definitions
+└── App.js            # App shell (navbar + routed pages + footer)
+```
 
-### Code Splitting
+## Known limitations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This was a front-end-only exam project, so a few things are intentionally incomplete:
 
-### Analyzing the Bundle Size
+- **Authentication** has no backend — the Login/Register buttons currently just log to the console rather than creating a real session
+- **Schedules** booking form collects details through a 4-step flow but doesn't submit them anywhere persistent
+- **Calculator** results are rough estimates based on fixed multipliers, not a certified carbon accounting method
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Author
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Lawand Salah
